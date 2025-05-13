@@ -7,4 +7,6 @@ int32 pwm_frb
 int32 pwm_rlb
 int32 pwm_rrb
 
+bool is_timed
+
 int64 duration

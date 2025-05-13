@@ -27,6 +27,8 @@ public:
         message.pwm_rlb = 13;
         message.pwm_rrb = 14;
 
+        message.is_timed = true;
+
         message.duration = msg_count++;
 
         std::cout << "Publishing PwmCmd to /pwm_cmd:" << 
@@ -38,6 +40,7 @@ public:
           "\n  pwm_frb: " << message.pwm_frb << 
           "\n  pwm_rlb: " << message.pwm_rlb << 
           "\n  pwm_rrb: " << message.pwm_rrb << 
+          "\n  is_timed " << message.is_timed << 
           "\n  duration: " << message.duration << std::endl;
 
 
