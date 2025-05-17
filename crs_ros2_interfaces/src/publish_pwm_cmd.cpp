@@ -31,6 +31,8 @@ public:
 
         message.duration = msg_count++;
 
+        message.is_overriding = true;
+
         std::cout << "Publishing PwmCmd to /pwm_cmd:" << 
           "\n  pwm_flt: " << message.pwm_flt <<
           "\n  pwm_frt: " << message.pwm_frt << 
@@ -41,7 +43,8 @@ public:
           "\n  pwm_rlb: " << message.pwm_rlb << 
           "\n  pwm_rrb: " << message.pwm_rrb << 
           "\n  is_timed " << message.is_timed << 
-          "\n  duration: " << message.duration << std::endl;
+          "\n  duration: " << message.duration << 
+          "\n  is_overriding: " << message.is_overriding << std::endl;
 
 
         this->pwm_cmd_publisher_->publish(message);
