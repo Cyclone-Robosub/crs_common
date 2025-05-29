@@ -16,12 +16,12 @@ A Python package:
 For a C++ package:
 * Add the following to your `package.xml`
   ```xml
-  <depend>tutorial_interfaces</depend>
+  <depend>crs_ros2_interfaces</depend>
   ```
 * Add the following lines to your `CMakeLists.txt`, replacing `YOUR_TARGET` with the name of your CMake target.
   ```CMake
   find_package(crs_ros2_interfaces REQUIRED)
-  ament_target_dependencies(YOUR_TARGET rclcpp tutorial_interfaces)
+  ament_target_dependencies(YOUR_TARGET rclcpp crs_ros2_interfaces)
   ```
 * Include the generated headers in files where you use the message, like so:
   ```cpp
