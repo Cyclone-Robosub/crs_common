@@ -18,7 +18,7 @@ int32 pwm_rrb
 bool is_timed
 
 # Duration of the PWM command
-int64 duration
+float64 duration
 
 # Should this command override existing PWM commands
 # 1 means any existing PWM commands should be removed before adding this one
