@@ -20,7 +20,7 @@ bool is_timed
 # Duration of the PWM command
 int64 duration
 
-# Should this command override exisiting PWM commands
+# Should this command override existing PWM commands
 # 1 means any existing PWM commands should be removed before adding this one
 # 0 means this command should be added to the queue
 bool is_overriding
