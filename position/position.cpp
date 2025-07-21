@@ -1,4 +1,5 @@
 #include "position.hpp"
+#include <array>
 
 bool float_equal(float x, float y) {
     return (x - y < 0.00001) || (y - x < 0.00001);
@@ -54,6 +55,9 @@ float Position::get_pitch() {
 
 float Position::get_yaw() {
     return yaw;
+}
+std::array<float, 6> Position::get_array_copy(){
+    return std::array<float, 6> {{get_x(), get_y(), get_z(), get_roll(), get_pitch(), get_yaw()}};
 }
 
 bool operator==(const Position& lhs, const Position& rhs) {

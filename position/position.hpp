@@ -16,6 +16,7 @@ public:
     float get_roll();
     float get_pitch();
     float get_yaw();
+    std::array<float,6> get_array_copy();
 
     float operator[](int value);
     friend bool operator==(const Position& lhs, const Position& rhs);
