@@ -3,6 +3,7 @@
 #include <array>
 #include <ostream>
 #include <iostream>
+#include <memory>
 
 class Position {
 public:
@@ -21,7 +22,7 @@ public:
     float operator[](int value);
     friend bool operator==(const Position& lhs, const Position& rhs);
     friend bool operator==(const Position& lhs, const std::array<float, 6>& rhs);
-    bool compare(Position &rhs);
+    bool compare(std::shared_ptr<Position> rhs);
 private:
     float x;
     float y;

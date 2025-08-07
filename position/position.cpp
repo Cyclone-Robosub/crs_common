@@ -65,14 +65,20 @@ bool operator==(const Position& lhs, const Position& rhs) {
     float_equal(lhs.z,rhs.z) && float_equal(lhs.roll,rhs.roll) && 
     float_equal(lhs.pitch,rhs.pitch) && float_equal(lhs.yaw,rhs.yaw);
 }
-bool Position::compare(Position &rhs){
-   return (x < rhs.get_x() + 0.2f && x > rhs.get_x() - 0.2f)
-    && (y < rhs.get_y() + 0.2f && y > rhs.get_y() - 0.2f)
-    && (z < rhs.get_z() + 0.2f && z > rhs.get_z() - 0.2f)
-    && (roll < rhs.get_roll() + 0.2f && roll > rhs.get_roll() - 0.2f)
-    && (pitch < rhs.get_pitch() + 0.2f && pitch > rhs.get_pitch() - 0.2f)
-    && (yaw < rhs.get_yaw() + 0.2f && yaw > rhs.get_yaw() - 0.2f);
+bool Position::compare(std::shared_ptr<Position> rhs) {
+    if (!rhs) {
+        std::cerr << "[ERROR] Position::compare called with null rhs!" << std::endl;
+        return false;  // or true, depending on your logic
+    }
+    return (get_x() < rhs->get_x() + 0.2f && get_x() > rhs->get_x() - 0.2f)
+        && (get_y() < rhs->get_y() + 0.2f && get_y() > rhs->get_y() - 0.2f)
+        && (get_z() < rhs->get_z() + 0.2f && get_z() > rhs->get_z() - 0.2f)
+        && (get_roll() < rhs->get_roll() + 0.2f && get_roll() > rhs->get_roll() - 0.2f)
+        && (get_pitch() < rhs->get_pitch() + 0.2f && get_pitch() > rhs->get_pitch() - 0.2f)
+        && (get_yaw() < rhs->get_yaw() + 0.2f && get_yaw() > rhs->get_yaw() - 0.2f);
 }
+
+
 //bool operator==(const Position& lhs, const std::array<float, 6>& rhs) {
 //    return float_equal(lhs.x,rhs[0]) && float_equal(lhs.y,rhs[1]) && 
 //    float_equal(lhs.z,rhs[2]) && float_equal(lhs.roll,rhs[3]) && 
