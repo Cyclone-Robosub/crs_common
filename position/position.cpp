@@ -65,7 +65,7 @@ bool operator==(const Position& lhs, const Position& rhs) {
     float_equal(lhs.z,rhs.z) && float_equal(lhs.roll,rhs.roll) && 
     float_equal(lhs.pitch,rhs.pitch) && float_equal(lhs.yaw,rhs.yaw);
 }
-bool Position::compare(std::shared_ptr<Position> rhs) {
+bool Position::AreWeThereYet(std::shared_ptr<Position> rhs) {
     if (!rhs) {
         std::cerr << "[ERROR] Position::compare called with null rhs!" << std::endl;
         return false;  // or true, depending on your logic

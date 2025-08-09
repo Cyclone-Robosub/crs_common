@@ -22,7 +22,7 @@ public:
     float operator[](int value);
     friend bool operator==(const Position& lhs, const Position& rhs);
     friend bool operator==(const Position& lhs, const std::array<float, 6>& rhs);
-    bool compare(std::shared_ptr<Position> rhs);
+    bool AreWeThereYet(std::shared_ptr<Position> rhs);
 private:
     float x;
     float y;
