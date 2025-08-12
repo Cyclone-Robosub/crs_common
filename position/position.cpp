@@ -65,17 +65,22 @@ bool operator==(const Position& lhs, const Position& rhs) {
     float_equal(lhs.z,rhs.z) && float_equal(lhs.roll,rhs.roll) && 
     float_equal(lhs.pitch,rhs.pitch) && float_equal(lhs.yaw,rhs.yaw);
 }
+
 bool Position::AreWeThereYet(std::shared_ptr<Position> rhs) {
+    return AreWeThereYet(rhs, 0.2f);
+}
+
+bool Position::AreWeThereYet(std::shared_ptr<Position> rhs, float tolerance) {
     if (!rhs) {
         std::cerr << "[ERROR] Position::compare called with null rhs!" << std::endl;
         return false;  // or true, depending on your logic
     }
-    return (get_x() < rhs->get_x() + 0.2f && get_x() > rhs->get_x() - 0.2f)
-        && (get_y() < rhs->get_y() + 0.2f && get_y() > rhs->get_y() - 0.2f)
-        && (get_z() < rhs->get_z() + 0.2f && get_z() > rhs->get_z() - 0.2f)
-        && (get_roll() < rhs->get_roll() + 0.2f && get_roll() > rhs->get_roll() - 0.2f)
-        && (get_pitch() < rhs->get_pitch() + 0.2f && get_pitch() > rhs->get_pitch() - 0.2f)
-        && (get_yaw() < rhs->get_yaw() + 0.2f && get_yaw() > rhs->get_yaw() - 0.2f);
+    return (get_x() < rhs->get_x() + tolerance && get_x() > rhs->get_x() - tolerance)
+        && (get_y() < rhs->get_y() + tolerance && get_y() > rhs->get_y() - tolerance)
+        && (get_z() < rhs->get_z() + tolerance && get_z() > rhs->get_z() - tolerance)
+        && (get_roll() < rhs->get_roll() + tolerance && get_roll() > rhs->get_roll() - tolerance)
+        && (get_pitch() < rhs->get_pitch() + tolerance && get_pitch() > rhs->get_pitch() - tolerance)
+        && (get_yaw() < rhs->get_yaw() + tolerance && get_yaw() > rhs->get_yaw() - tolerance);
 }
 
 
