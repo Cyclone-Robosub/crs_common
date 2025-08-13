@@ -19,6 +19,14 @@ public:
     float get_yaw();
     std::array<float,6> get_array_copy();
 
+    
+    // Overloaded << operator for printing
+    friend std::ostream& operator<<(std::ostream& os, const Position& pos) {
+        os << "[" << pos.x << ", " << pos.y << ", " << pos.z << ", "
+           << pos.roll << ", " << pos.pitch << ", " << pos.yaw << "]";
+        return os;
+    }
+
     float operator[](int value);
     friend bool operator==(const Position& lhs, const Position& rhs);
     friend bool operator==(const Position& lhs, const std::array<float, 6>& rhs);

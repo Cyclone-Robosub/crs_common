@@ -77,10 +77,7 @@ bool Position::AreWeThereYet(std::shared_ptr<Position> rhs, float tolerance) {
     }
     return (get_x() < rhs->get_x() + tolerance && get_x() > rhs->get_x() - tolerance)
         && (get_y() < rhs->get_y() + tolerance && get_y() > rhs->get_y() - tolerance)
-        && (get_z() < rhs->get_z() + tolerance && get_z() > rhs->get_z() - tolerance)
-        && (get_roll() < rhs->get_roll() + tolerance && get_roll() > rhs->get_roll() - tolerance)
-        && (get_pitch() < rhs->get_pitch() + tolerance && get_pitch() > rhs->get_pitch() - tolerance)
-        && (get_yaw() < rhs->get_yaw() + tolerance && get_yaw() > rhs->get_yaw() - tolerance);
+        && (get_z() < rhs->get_z() + tolerance && get_z() > rhs->get_z() - tolerance);
 }
 
 
