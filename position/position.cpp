@@ -67,7 +67,7 @@ bool operator==(const Position& lhs, const Position& rhs) {
 }
 
 bool Position::AreWeThereYet(std::shared_ptr<Position> rhs) {
-    return AreWeThereYet(rhs, 0.2f);
+    return AreWeThereYet(rhs, 0.5f);
 }
 
 bool Position::AreWeThereYet(std::shared_ptr<Position> rhs, float tolerance) {
