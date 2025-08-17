@@ -52,3 +52,6 @@ CATKIN_IGNORE
 
 install/*
 log/*
+
+# VSCode configuration folder
+position/.vscode/*
